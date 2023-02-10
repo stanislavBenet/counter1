@@ -33,7 +33,7 @@ class Counter extends Component {
           value={stepCounter}
           onChange={this.inputHundler}
           placeholder="Please, set step"
-        ></input>
+        ></input> 
       </div>
     );
   }
