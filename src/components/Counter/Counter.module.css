@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+  margin-top: 20vh;
+}
+
+.btn {
+  margin: 10px;
+  background-color: rgba(94, 94, 151, 0.774);
+  color: rgba(224, 215, 215, 0.788);
+}
+
+.input {
+  box-sizing: border-box;
+  text-align: center;
+  
+  width: 200px;
+}

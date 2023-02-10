@@ -1,0 +1,19 @@
+.container {
+  text-align: center;
+}
+
+.btn {
+  margin: 3px;
+  background-color: rgba(94, 94, 151, 0.774);
+  color: rgba(224, 215, 215, 0.788);
+}
+
+.getCounter {
+  font-family: fantasy;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.none {
+  display: none;
+}
