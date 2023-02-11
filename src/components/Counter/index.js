@@ -8,6 +8,7 @@ class Counter extends Component {
     this.state = {
       stepCounter: 1,
       intervalId: null,
+      isAutoClick: false,
     };
   }
   inputHundler = ({ target: { name, value } }) => {
@@ -21,19 +22,23 @@ class Counter extends Component {
     }
   };
 
+  componentDidMount() {}
   render() {
-    const { stepCounter } = this.state;
+    const { stepCounter, isAutoClick } = this.state;
     return (
       <div className={styles.container}>
-        <CountSetting stepCounter={stepCounter} />
-        <p>Current step: {stepCounter}</p>
-        <input
-          className={styles.input}
-          name="stepCounter"
-          value={stepCounter}
-          onChange={this.inputHundler}
-          placeholder="Please, set step"
-        ></input> 
+        <article>
+          <p className={styles.parahraph}>Current step: {stepCounter}</p>
+          <p className={styles.parahraph}>Change step:</p>
+          <input
+            className={styles.input}
+            name="stepCounter"
+            value={stepCounter}
+            onChange={this.inputHundler}
+            placeholder="Please, set step"
+          ></input>
+        </article>
+        <CountSetting stepCounter={stepCounter} isAutoClick={isAutoClick} />
       </div>
     );
   }
