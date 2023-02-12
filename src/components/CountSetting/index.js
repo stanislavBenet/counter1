@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styles from "./CountSetting.module.css";
+import CounterAutoClick from "../CounterAutoClick";
 import cx from "classnames";
 
 class CountSetting extends Component {
@@ -44,20 +45,6 @@ class CountSetting extends Component {
   changeHundler = () => {
     this.setState({ isAddMode: !this.state.isAddMode });
   };
-  addFrequency = () => {
-    if (this.state.autoclickFrequency < 5) {
-      this.setState((state, props) => {
-        return { autoclickFrequency: this.state.autoclickFrequency + 1 };
-      });
-    }
-  };
-  subFrequency = () => {
-    if (this.state.autoclickFrequency > 1) {
-      this.setState((state, props) => {
-        return { autoclickFrequency: this.state.autoclickFrequency - 1 };
-      });
-    }
-  };
 
   addCounter = () => {
     //const { autoclickFrequency } = this.state;
@@ -78,7 +65,7 @@ class CountSetting extends Component {
   };
 
   render() {
-    const { amountCounter, isAddMode, date, autoclickFrequency } = this.state;
+    const { amountCounter, isAddMode, date } = this.state;
     const classChangeModeSub = cx(styles.button, {
       [styles.none]: !isAddMode,
     });
@@ -99,26 +86,8 @@ class CountSetting extends Component {
           <button className={styles.button} onClick={this.changeHundler}>
             <span className={styles.buttonContent}>Change mode </span>
           </button>
-        </section>{" "}
-        <section className={styles.center__autoclick}>
-          <div className={styles.btn__positionAutoclick}>
-            <button onClick={this.addFrequency} className={styles.btn__autoclick__subAdd}>
-              +
-            </button>
-            <p className={styles.parahraph}>Take AutoClick frequency </p>
-            <button onClick={this.subFrequency} className={styles.btn__autoclick__subAdd}>
-              -
-            </button>
-          </div>
-          <p className={styles.getCounter}>{autoclickFrequency}</p>
-
-          <button onClick={this.start} className={styles.button__autoclick}>
-            start autoclick
-          </button>
-          <button onClick={this.reset} className={styles.button__autoclick}>
-            stop and reset autoclick
-          </button>
         </section>
+        <CounterAutoClick />
       </>
     );
   }

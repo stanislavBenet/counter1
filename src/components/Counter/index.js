@@ -39,6 +39,7 @@ class Counter extends Component {
           ></input>
         </article>
         <CountSetting stepCounter={stepCounter} isAutoClick={isAutoClick} />
+        
       </div>
     );
   }
